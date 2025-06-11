@@ -35,15 +35,11 @@ public class Login {
             String userPassword = userPasswordTextField.getText();
             
             System.out.printf("Usuário: %s\nSenha: %s%n", userName, userPassword);
-            
-            // É crucial que a classe Dashboard exista e esteja acessível
-            // Se Dashboard também usa AWT Frame, o método deve ser sceneDashboard
-            // Certifique-se de que Dashboard.java está no pacote br.com.beatriz
-            // ou importado corretamente se estiver em outro pacote.
+
             Dashboard dashboard = new Dashboard();
             dashboard.sceneDashboard(userName);
-            frame.setVisible(false); // Esconde a tela de login
-            frame.dispose(); // Libera os recursos da tela de login
+            frame.setVisible(false);
+            frame.dispose();
         });
         
         frame.addWindowListener(new WindowListener());
@@ -65,9 +61,8 @@ public class Login {
         }
     }
 
-    // --- NOVO: Adicionado método main para que você possa executar esta classe diretamente ---
     public static void main(String[] args) {
         Login loginApp = new Login();
-        loginApp.sceneLogin(); // Chama o método que configura e mostra a tela de login
+        loginApp.sceneLogin();
     }
 }
