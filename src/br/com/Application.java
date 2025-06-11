@@ -1,6 +1,6 @@
-package br.com.beatriz;
+package br.com;
 
-import br.com.beatriz.views.Welcome;
+import br.com.beatriz.Welcome;
 
 public class Application {
 

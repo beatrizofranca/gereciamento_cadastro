@@ -1,4 +1,4 @@
-package br.com.beatriz.views;
+package br.com.beatriz;
 
 import java.awt.Font;
 import java.awt.Frame;
