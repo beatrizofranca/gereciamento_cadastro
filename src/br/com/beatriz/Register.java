@@ -5,7 +5,6 @@ import java.awt.Frame;
 import java.awt.Label;
 import java.awt.TextField;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
@@ -43,22 +42,18 @@ public class Register {
 		
 		Button loginButton = new Button("Cadastro");
 		loginButton.setBounds(50, userPasswordTextField.getLocation().y + 50, 200, 42);
-		loginButton.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				String userName = userNameTextField.getText();
-				String email = userEmailTextField.getText();
-				String userPassword = userPasswordTextField.getText();
-				
-				Dashboard dashboard = new Dashboard();
-				dashboard.sceneDashboard(userName);
-				
-				System.out.printf("Usuário: %s\nE-mail:%s\nSenha: %s", userName, email, userPassword);
-				
-				frame.setVisible(false);
-			}
-		});
+		loginButton.addActionListener((ActionEvent e) -> {
+                    String userName = userNameTextField.getText();
+                    String email = userEmailTextField.getText();
+                    String userPassword = userPasswordTextField.getText();
+                    
+                    Dashboard dashboard = new Dashboard();
+                    dashboard.sceneDashboard(userName);
+                    
+                    System.out.printf("Usuário: %s\nE-mail:%s\nSenha: %s", userName, email, userPassword);
+                    
+                    frame.setVisible(false);
+                });
 		
 		frame.addWindowListener(new WindowListener());
 		
@@ -77,6 +72,7 @@ public class Register {
 	}
 	
 	protected final class WindowListener extends WindowAdapter {
+		@Override
 		public void windowClosing(WindowEvent e) {
 			System.exit(0);
 		}
